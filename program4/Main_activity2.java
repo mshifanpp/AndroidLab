@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+package com.example.registration;
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="193dp"
-        android:layout_height="29dp"
-        android:text="second activity"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity2 extends AppCompatActivity {
+    TextView t1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.actvity_main2);
+        t1=findViewById(R.id.textView);
+        String name =getIntent().getStringExtra("username");
+        t1.setText("wlcome"+name);
+    }
+}
